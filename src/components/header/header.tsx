@@ -1,33 +1,30 @@
-import { component$, useStylesScoped$ } from '@builder.io/qwik';
-import { QwikLogo } from '../icons/qwik';
-import styles from './header.css?inline';
+import { component$ } from "@builder.io/qwik";
+import { QwikLogo } from "../icons/qwik";
+import { Link } from "@builder.io/qwik-city";
 
 export default component$(() => {
-  useStylesScoped$(styles);
-
   return (
-    <header>
-      <div class="logo">
-        <a href="https://qwik.builder.io/" target="_blank" title="qwik">
+    <header class="flex flex-1 justify-between h-20 p-4">
+      <div class="flex">
+        <a
+          href="https://app.kasasi.de"
+          target="_blank"
+          title="qwik"
+          rel="noopener noreferrer"
+        >
           <QwikLogo />
         </a>
       </div>
-      <ul>
-        <li>
-          <a href="https://qwik.builder.io/docs/components/overview/" target="_blank">
-            Docs
-          </a>
-        </li>
-        <li>
-          <a href="https://qwik.builder.io/examples/introduction/hello-world/" target="_blank">
-            Examples
-          </a>
-        </li>
-        <li>
-          <a href="https://qwik.builder.io/tutorial/welcome/overview/" target="_blank">
-            Tutorials
-          </a>
-        </li>
+      <ul class="flex gap-3">
+        <Link class="cursor-pointer" href="/software-solutions/">
+          Softwarelösungen
+        </Link>
+        <Link class="cursor-pointer" href="/individual-solutions/">
+          Individuelle Lösungen
+        </Link>
+        <Link class="cursor-pointer" href="/about-kasasi/">
+          Über kasasi
+        </Link>
       </ul>
     </header>
   );
